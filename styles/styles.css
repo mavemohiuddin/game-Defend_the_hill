@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    list-style: none;
+    font-family: 'Itim', cursive;
+}
+
+.game_body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(215, 243, 214);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game_board {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    height: 500px;
+    width: 500px;
+    border-bottom: solid 1px rgb(230, 230, 230);
+    border-right: solid 1px rgb(230, 230, 230);
+    position: relative;
+}
+.game_chunk {
+    background-color: rgb(247, 247, 247);
+    border-top: solid 1px rgb(230, 230, 230);
+    border-left: solid 1px rgb(230, 230, 230);
+}
+[data-influence-owner="enemy_host"] {
+    background-color: red;
+}
+[data-influence-owner="friendly_host"] {
+    background-color: green;
+}
+[data-influence-owner="enemy"] {
+    background-color: rgb(255, 89, 89);
+}
+[data-influence-owner="friendly"] {
+    background-color: rgb(20, 255, 20);
+}
+*:is([data-influence-owner="enemy"], [data-influence-owner="friendly"])[data-influence-power="0"] {
+    opacity: 0.2;
+}
+[data-influence-power="1"] {
+    opacity: 0.25;
+}
+[data-influence-power="2"] {
+    opacity: 0.3;
+}
+[data-influence-power="3"] {
+    opacity: 0.35;
+}
+[data-influence-power="4"] {
+    opacity: 0.4;
+}
+[data-influence-power="5"] {
+    opacity: 0.5;
+}
+[data-influence-power="6"] {
+    opacity: 0.6;
+}
+[data-influence-power="7"] {
+    opacity: 0.7;
+}
+[data-influence-power="8"] {
+    opacity: 0.8;
+}
+[data-influence-power="9"] {
+    opacity: 0.9;
+}
+[data-influence-power="10"] {
+    opacity: 1;
+}
+
+.left_column {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100vh;
+}
+.right_column {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 300px;
+    height: 100vh;
+}
+.top_panel {
+    position: absolute;
+    top: 0px;
+    height: 40vh;
+    width: 100%;
+    outline: solid 1px;
+}
+.bottom_panel {
+    position: absolute;
+    bottom: 0px;
+    height: 40vh;
+    width: 100%;
+    outline: solid 1px;
+}
+.right_column .top_panel,
+.right_column .bottom_panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.display_block {
+    padding: 5px 15px;
+    background-color: white;
+    border-radius: 100px;
+}
+.right_column .top_panel ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 5px 20px 5px 5px;
+}
+.right_column .top_panel li {
+    display: flex;
+    flex-direction :column;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px rgb(134, 134, 134);
+}
